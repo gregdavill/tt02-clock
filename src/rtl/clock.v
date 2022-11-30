@@ -22,7 +22,7 @@ module clock (
     wire [7:0] dec_out;
 
     wire sr_load;
-    wire sr_busy;
+    wire sr_rdy;
     wire cnt_en;
     wire minute_inc_en, hour_inc_en;
 
@@ -85,7 +85,7 @@ module clock (
         .i_rst(i_rst),
         .i_load(sr_load),
         .i_data(dec_out),
-        .o_busy(sr_busy),
+        .o_rdy(sr_rdy),
         .o_bit(o_bit),
         .o_clk(o_clk)
     );
@@ -93,7 +93,7 @@ module clock (
     ctrl ctrl(
         .i_clk(i_clk),
         .i_rst(i_rst),
-        .i_srbusy(sr_busy),
+        .i_srrdy(sr_rdy),
         .o_srload(sr_load),
         .o_muxsel(mux_sel),
         .o_latch(o_latch),

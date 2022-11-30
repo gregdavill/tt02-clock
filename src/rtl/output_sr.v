@@ -7,14 +7,14 @@ module output_sr (
     input [7:0] i_data,
     output o_bit,
     output o_clk,
-    output o_busy
+    output o_rdy
 );
     reg [4:0] counter;
     reg [7:0] sr;
 
     assign o_clk = counter[0];
     assign o_bit = sr[7];
-    assign o_busy = (counter != 0);
+    assign o_rdy = (counter[4:1] == 3'd0);
     
 
     always @(posedge i_clk) begin
