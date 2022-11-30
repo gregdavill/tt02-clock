@@ -1,0 +1,3 @@
+[submodule "src/sim/deps/imgui"]
+	path = src/sim/deps/imgui
+	url = https://github.com/ocornut/imgui.git

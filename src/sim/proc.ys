@@ -1,0 +1,7 @@
+read_verilog ../rtl/clock.v ../rtl/bcd_counter.v ../rtl/bcd_decoder.v ../rtl/ctrl.v ../rtl/output_sr.v ../rtl/mux_6_4b.v ../rtl/rise_edge.v
+hierarchy -check -top clock
+proc
+flatten
+opt
+write_ilang clock.sim.ilang
+write_cxxrtl -header clock.sim.cpp
